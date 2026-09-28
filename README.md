@@ -1,5 +1,7 @@
 # Jev Snake
 
+![Jev Snake after Jev chooses a move](screenshot.jpg)
+
 The game computes legal directions on the shortest reachable routes to the apple. Each turn, the local server sends the current board and those directions to Jev as a `Choice` question. Jev picks a direction; the game validates it and advances one cell. No move history is sent.
 
 ```mermaid
