@@ -35,4 +35,24 @@ Example body sent to `POST https://api.typesafe.ai/v1/systemone`:
 }
 ```
 
+On a turn with the apple down and left, these fields instead contain:
+
+```json
+{
+  "state": {
+    "snake": [{ "x": 8, "y": 9 }, { "x": 9, "y": 9 }, { "x": 10, "y": 9 }],
+    "food": { "x": 6, "y": 10 },
+    "legal_moves": ["down", "left"]
+  },
+  "questions": {
+    "next_move": {
+      "criteria": {
+        "down": "Move down one cell.",
+        "left": "Move left one cell."
+      }
+    }
+  }
+}
+```
+
 The TypeSafe API key stays in the local server process. The browser never receives it.
