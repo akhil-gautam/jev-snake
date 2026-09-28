@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jev Snake</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <main class="shell">
+      <header class="masthead">
+        <div class="brand"><span class="brand-mark" aria-hidden="true">◒</span> Jev Snake</div>
+        <a href="https://docs.typesafe.ai/concepts/system-one" target="_blank" rel="noopener noreferrer">Powered by System One ↗</a>
+      </header>
+
+      <div class="layout">
+        <section class="play-area" aria-labelledby="game-title">
+          <div class="intro">
+            <div>
+              <p class="kicker">An AI arcade experiment</p>
+              <h1 id="game-title">Watch Jev<br>find its way.</h1>
+              <p class="description">One board. One apple. A fresh decision from Jev every turn.</p>
+            </div>
+            <div class="scoreboard" aria-label="Game statistics">
+              <div><span>Apples</span><strong id="score">0</strong></div>
+              <div><span>Moves</span><strong id="turns">0</strong></div>
+            </div>
+          </div>
+
+          <div class="board-frame">
+            <div class="board-top"><span><i class="live-dot" aria-hidden="true"></i> Live board</span><span>18 × 18</span></div>
+            <div id="board" class="board" role="img" aria-label="Snake game board"></div>
+          </div>
+        </section>
+
+        <aside class="control-panel" aria-label="Game controls">
+          <div class="panel-heading"><span class="panel-icon" aria-hidden="true">✦</span><span>Jev at the wheel</span></div>
+          <div class="status-block">
+            <span class="small-label">Current state</span>
+            <p id="status" role="status" aria-live="polite">Ready when you are.</p>
+          </div>
+          <div class="decision-block">
+            <span class="small-label">Last decision</span>
+            <div class="decision"><span id="direction-icon" aria-hidden="true">–</span><strong id="direction">No move yet</strong></div>
+            <div class="confidence-row"><span>Confidence</span><span id="confidence">–</span></div>
+            <div class="confidence-track"><div id="confidence-fill"></div></div>
+          </div>
+          <div class="controls">
+            <button id="play" class="primary-button" type="button">Start Jev</button>
+            <div class="secondary-controls">
+              <button id="step" type="button">One move</button>
+              <button id="reset" type="button">Reset</button>
+            </div>
+            <label for="speed">Time between moves <output id="speed-value" for="speed">0.7 s</output></label>
+            <input id="speed" type="range" min="250" max="1500" step="50" value="700">
+          </div>
+          <p class="panel-note">The game finds the shortest reachable routes to the apple, then Jev picks a direction. If the API is unavailable, play pauses.</p>
+        </aside>
+      </div>
+      <footer>Snake rules, Jev decisions. Your API key stays on the local server.</footer>
+    </main>
+    <script type="module" src="/app.mjs"></script>
+  </body>
+</html>
